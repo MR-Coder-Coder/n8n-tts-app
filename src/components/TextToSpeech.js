@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { getAuth } from 'firebase/auth'; // Import Firebase Auth
 import { db } from '../firebase'; // Import Firestore instance
 import { collection, getDocs } from 'firebase/firestore';
 import './TextToSpeech.css';
@@ -9,6 +10,7 @@ const TextToSpeech = () => {
   const [text, setText] = useState('');
   const [audioUrl, setAudioUrl] = useState(null);
   const [loading, setLoading] = useState(false);
+  const [user, setUser] = useState(null); // State for storing logged-in user
 
   // Fetch voices from Firestore
   useEffect(() => {
@@ -25,6 +27,15 @@ const TextToSpeech = () => {
       }
     };
     fetchVoices();
+  }, []);
+
+  // Fetch authenticated user's information
+  useEffect(() => {
+    const auth = getAuth();
+    const currentUser = auth.currentUser;
+    if (currentUser) {
+      setUser(currentUser); // Set user state with the logged-in user's info
+    }
   }, []);
 
   // Handle the submission of text-to-speech request
@@ -75,7 +86,9 @@ const TextToSpeech = () => {
   return (
     <div className="text-to-speech-container">
       <h2><span role="img" aria-label="microphone">🎤</span> Text-to-Speech Generator</h2>
-      <p className="welcome-message">👤 Welcome, cryptoboyz64@gmail.com!</p>
+      <p className="welcome-message">
+        👤 Welcome, {user ? user.email : 'Guest'}!
+      </p>
 
       {/* Dropdown for selecting voice */}
       <div className="input-container">
