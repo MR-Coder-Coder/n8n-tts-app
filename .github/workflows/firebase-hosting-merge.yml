@@ -21,7 +21,7 @@ jobs:
           repoToken: ${{ secrets.GITHUB_TOKEN }}
           firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_N8N_TTS_APP }}
           channelId: live
-          projectId: mortgage-calculator-f9283
+          projectId: n8n-tts-app
       - name: Deploy to Firebase Firestore
         env:
           FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
