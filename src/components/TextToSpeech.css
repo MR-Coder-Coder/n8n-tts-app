@@ -1,0 +1,100 @@
+/* Container for the entire form */
+.text-to-speech-container {
+    max-width: 500px;
+    margin: 50px auto;
+    padding: 40px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Header */
+.text-to-speech-container h2 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/* Welcome message */
+.text-to-speech-container p {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 30px;
+}
+
+/* Input containers */
+.input-container {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+/* Labels */
+.input-container label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    font-size: 14px;
+}
+
+/* Dropdown select box */
+.input-container select {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+}
+
+/* Textarea for entering the text */
+.input-container textarea {
+    width: 100%;
+    padding: 15px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    resize: none;
+}
+
+/* Button */
+.generate-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #000;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-top: 20px;
+    width: 100%;
+    transition: background-color 0.3s ease;
+}
+
+.generate-button:hover {
+    background-color: #333;
+}
+
+.generate-button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+/* Audio player */
+audio {
+    margin-top: 20px;
+    width: 100%;
+}
+
+/* Download link */
+.download-link {
+    margin-top: 10px;
+    font-size: 16px;
+    color: #000;
+    text-decoration: underline;
+    cursor: pointer;
+}
